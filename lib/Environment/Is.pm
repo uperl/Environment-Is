@@ -35,13 +35,15 @@ Additional environments may be added in the future.
   $ffi->bundle;
   $ffi->mangler(sub ($name) { "iz_$name" });
 
-  our @EXPORT_OK = qw( is_docker is_wsl );
-
 =head1 FUNCTIONS
 
 =head2 is_docker
 
 Returns true if the current process is running inside a docker container.
+
+=head2 is_interactive
+
+Return true if the current process is interactive.
 
 =head2 is_wsl
 
@@ -50,7 +52,10 @@ Returns true if the current process is running inside Windows Subsystem for Linu
 =cut
 
   $ffi->attach( is_docker => [] => 'bool' );
+  $ffi->attach( is_interactive => [] => 'bool' );
   $ffi->attach( is_wsl => [] => 'bool' );
+
+  our @EXPORT_OK = sort grep /^is_/, keys %Environment::Is::;
 
 }
 
