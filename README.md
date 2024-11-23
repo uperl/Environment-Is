@@ -27,6 +27,10 @@ Additional environments may be added in the future.
 
 Returns true if the current process is running inside a docker container.
 
+## is\_interactive
+
+Return true if the current process is interactive.
+
 ## is\_wsl
 
 Returns true if the current process is running inside Windows Subsystem for Linux (WSL).
