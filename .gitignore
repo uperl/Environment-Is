@@ -1,5 +1,6 @@
 Environment-Is-*
 /.build/
 *.swp
-
-
+/ffi/target
+/ffi/_build
+/ffi/Cargo.lock
